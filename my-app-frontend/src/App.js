@@ -31,7 +31,7 @@ function App() {
       console.log(`${err.message} stars`)
     })
   }, []);
-
+console.log(stars)
   useEffect(() => {
     fetch(usersAPI)
     .then(r=>r.json())
@@ -41,15 +41,16 @@ function App() {
     })
   }, []);
 
-  function handleDelete(e) {
+  function handleDelete(e, star) {
     e.preventDefault();
     console.log(e.target)
+    console.log(star.id)
 
-  //   fetch(`http://localhost:9292/stars/${stars.id}`, {
-  //     method: "DELETE",
-  // })
-  // .then(r => r.json())
-  // .then(deletedStar) => onDeleteStar(deletedStar));
+    fetch(`http://localhost:9292/stars/${star.id}`, {
+      method: "DELETE",
+  })
+  .then(r => r.json())
+  .then(data => console.log(data));
     }
 
   function handleNewStar(e) {

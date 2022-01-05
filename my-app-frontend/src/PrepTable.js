@@ -1,18 +1,17 @@
 import React from "react";
 import RenderStars from "./RenderStars";
 
-function StarTable({constellations, stars, users, handleDelete}) {
-  console.log(stars[0])
+function PrepTable({constellations, stars, users, handleDelete}) {
 
   const table = stars.map(star => {
     return (
       <tr key={star.id}>
-        <td>{star.id}</td>
         <td>{star.name}</td>
         <td>{star.distance}</td>
         <td>{star.apparent_magnitude}</td>
+        <td>{star.temperature}</td>        
         <td>{star.confirmed_planets}</td>
-        <button onClick= {(e) => handleDelete(e)}>Initiate supernova</button>
+        <button onClick= {(e) => handleDelete(e, star)}>Initiate supernova!</button>
       </tr>
     )
   })
@@ -52,4 +51,4 @@ function StarTable({constellations, stars, users, handleDelete}) {
   // );
 }
 
-export default StarTable;
+export default PrepTable;
