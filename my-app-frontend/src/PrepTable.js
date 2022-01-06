@@ -3,9 +3,7 @@ import RenderStars from "./RenderStars";
 import ShowStars from "./ShowStars";
 
 function PrepTable({ stars, handleDelete }) {
-  console.log(stars)
   const table = stars.map((star) => {
-    console.log(star)
     return (
       <tr key={star.id}>
         <td>{star.name}</td>

@@ -40,18 +40,17 @@ function App() {
     fetch(`http://localhost:9292/stars/${star.id}`, {
       method: "DELETE",
     })
-      .then((r) => r.json())
-      .then((data) => console.log(data));
+      // .then((r) => r.json())
+      // .then((data) => console.log(data));
   }
 
   function addAstronomyData(e) {
-
+    
     handleNewConstellation(e)
     handleNewStar(e)
 
     function handleNewConstellation(e) {
       e.preventDefault();
-      console.log("in new constellation");
       fetch(constellationsAPI, {
         method: "POST",
         headers: {
@@ -68,7 +67,6 @@ function App() {
 
     function handleNewStar(e) {
       e.preventDefault();
-      console.log("in new star");
       fetch(starsAPI, {
         method: "POST",
         headers: {
@@ -87,9 +85,6 @@ function App() {
         .then(setStar_hash);
     }
   }
-
-  // console.log(constellation_hash)
-  // console.log(star_hash)
 
   return (
     <div className="App">
