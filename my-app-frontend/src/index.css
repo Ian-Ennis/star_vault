@@ -14,14 +14,27 @@ code {
 
 .App {
   padding: 25px;
+  background-color: darkgrey;
+  background-image: url('../public/starfield-17.png');
+  z-index: -2;
 }
 
 #star_vault {
   text-align: center;
+  padding: 28px;
+  border: 2px solid #000000;
+  background-color: ghostwhite;
+  margin-left: 43%;
+  margin-right: 43%;
 }
 
 #site_info {
   text-align: center;
+  margin-left: 6%;
+  margin-right: 6%;
+  padding: 28px;
+  border: 2px solid #000000;
+  background-color: ghostwhite;
 }
 
 .tableFlexContainer {
@@ -33,12 +46,18 @@ code {
 
 #welcome {
   text-align: center;
+  padding: 2px;
+  border: 2px solid #000000;
+  background-color: ghostwhite;
+  margin-left: 23%;
+  margin-right: 23%;
 }
 
 .records {
   justify-content: center;
   padding: 28px;
   border: 2px solid #000000;
+  background-color:ghostwhite
 }
 
 .new_discovery_form_flex_container {
@@ -47,9 +66,18 @@ code {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 28px;
+  border: 2px solid #000000;
+  background-color: ghostwhite;
 }
 
 #footer {
   text-align: center;
+  margin-top: 483px;
+  width: 100%;
+  padding: 11px;
+  border: 2px solid #000000;
+  background-color: ghostwhite;
+  box-shadow: 0 30px 40px rgba(0,0,0,.1);
 }
 

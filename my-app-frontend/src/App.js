@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import SiteInfo from "./SiteInfo";
 import PrepTable from "./PrepTable";
@@ -42,8 +41,6 @@ function App() {
     fetch(`http://localhost:9292/stars/${star.id}`, {
       method: "DELETE",
     })
-      // .then((r) => r.json())
-      // .then((data) => console.log(data));
   }
 
   function addAstronomyData(e) {
