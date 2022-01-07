@@ -1,6 +1,5 @@
 import React from "react";
 import RenderStars from "./RenderStars";
-import ShowStars from "./ShowStars";
 
 function PrepTable({ stars, handleDelete }) {
   const table = stars.map((star) => {
@@ -12,16 +11,15 @@ function PrepTable({ stars, handleDelete }) {
         <td>{star.apparent_magnitude}</td>
         <td>{star.temperature}</td>
         <td>{star.confirmed_planets}</td>
-        <td><button onClick={(e) => handleDelete(e, star)}>Initiate supernova!</button></td>
+        <td><button onClick={(e) => handleDelete(e, star)}>Remove</button></td>
       </tr>
     );
   });
 
   return (
-    <div>
+    <>
       <RenderStars table={table} />
-      <ShowStars />
-    </div>
+    </>
   );
 }
 

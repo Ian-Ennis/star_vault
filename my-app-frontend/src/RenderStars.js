@@ -2,13 +2,13 @@ import React from "react";
 
 function RenderStars({ table }) {
   return (
-    <div>
-      <p id="star_title">
-        Welcome, seasoned astronomer! You have been granted access to remove
-        false stars from the database.
+    <div className="tableFlexContainer">
+      <p id="welcome">
+        <em>Welcome, seasoned astronomer! You have been granted access to remove
+        false stars from the database.</em>
       </p>
 
-      <table className="starTable">
+      <table className="records">
         <tbody>
           <td>Name</td>
           <td>Constellation</td>
@@ -19,6 +19,7 @@ function RenderStars({ table }) {
           {table}
         </tbody>
       </table>
+      <br/>
     </div>
   );
 }

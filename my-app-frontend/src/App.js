@@ -4,6 +4,8 @@ import Header from "./Header";
 import SiteInfo from "./SiteInfo";
 import PrepTable from "./PrepTable";
 import SubmitStar from "./SubmitStar";
+import Footer from "./Footer";
+
 
 const constellationsAPI = "http://localhost:9292/constellations";
 const starsAPI = "http://localhost:9292/stars";
@@ -92,6 +94,7 @@ function App() {
       <SiteInfo />
       <PrepTable stars={star_hash} handleDelete={handleDelete} />
       <SubmitStar addAstronomyData={addAstronomyData} />
+      <Footer />
     </div>
   );
 }
