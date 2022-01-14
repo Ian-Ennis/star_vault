@@ -1,10 +1,10 @@
 import React from "react";
 
-function SubmitStar({ addAstronomyData }) {
+function SubmitStar({ addAstronomyData, askToAdd }) {
   return (
     <div className="new_discovery_form_flex_container">
       <h4>Have you discovered a new possible star? Complete this form.</h4>
-      <form onSubmit={(e) => addAstronomyData(e)}>
+      <form onSubmit={(e) => addAstronomyData(e)} onSubmit={(e) => askToAdd(e)}>
         <input type="text" name="name" placeholder="Name your star:" />
         <input type="text" name="constellation" placeholder="In which constellation?" />
         <input type="float" name="distance" placeholder="Distance (lightyears)" />

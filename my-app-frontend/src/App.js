@@ -5,6 +5,7 @@ import PrepTable from "./PrepTable";
 import SubmitStar from "./SubmitStar";
 import Footer from "./Footer";
 
+console.log(React.version)
 
 const constellationsAPI = "http://localhost:9292/constellations";
 const starsAPI = "http://localhost:9292/stars";
@@ -35,18 +36,9 @@ function App() {
     star_hash[i]["Constellation"] = constellation_hash[i];
   }
 
-  function handleDelete(e, star) {
-    e.preventDefault();
-
-    fetch(`http://localhost:9292/stars/${star.id}`, {
-      method: "DELETE",
-    })
-  }
-
   function addAstronomyData(e) {
-    
-    handleNewConstellation(e)
-    handleNewStar(e)
+    handleNewConstellation(e);
+    handleNewStar(e);
 
     function handleNewConstellation(e) {
       e.preventDefault();
@@ -85,12 +77,30 @@ function App() {
     }
   }
 
+  function askToAdd(e) {
+    e.preventDefault();
+    window.confirm(`Add ${e.target.name.value} to database?`);
+    addAstronomyData(e)
+  }
+
+  function askToDelete(e, star) {
+    e.preventDefault()
+    window.confirm(`Delete ${star.name} from database?`)
+    if (window.confirm) {
+      fetch(`http://localhost:9292/stars/${star.id}`, {
+      method: "DELETE",
+    });
+    }
+  }
+
+  console.log(star_hash)
+
   return (
     <div className="App">
       <Header />
       <SiteInfo />
-      <PrepTable stars={star_hash} handleDelete={handleDelete} />
-      <SubmitStar addAstronomyData={addAstronomyData} />
+      <PrepTable stars={star_hash} askToDelete={askToDelete} />
+      <SubmitStar addAstronomyData={addAstronomyData} askToAdd={askToAdd} />
       <Footer />
     </div>
   );

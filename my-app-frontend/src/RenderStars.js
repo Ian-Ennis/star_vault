@@ -4,8 +4,8 @@ function RenderStars({ table }) {
   return (
     <div className="tableFlexContainer">
       <p id="welcome">
-        <em>Welcome, seasoned astronomer! You have been granted access to remove
-        false stars from the database.</em>
+        Welcome, seasoned astronomer! You have been granted access to remove
+        false stars from the database.
       </p>
 
       <table className="records">
