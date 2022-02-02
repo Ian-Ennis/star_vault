@@ -88,12 +88,10 @@ function App() {
     window.confirm(`Delete ${star.name} from database?`)
     if (window.confirm) {
       fetch(`http://localhost:9292/stars/${star.id}`, {
-      method: "DELETE",
+      method: "DELETE"
     });
     }
   }
-
-  console.log(star_hash)
 
   return (
     <div className="App">
