@@ -5,8 +5,6 @@ import PrepTable from "./PrepTable";
 import SubmitStar from "./SubmitStar";
 import Footer from "./Footer";
 
-console.log(React.version)
-
 const constellationsAPI = "http://localhost:9292/constellations";
 const starsAPI = "http://localhost:9292/stars";
 
